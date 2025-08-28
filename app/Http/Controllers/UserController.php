@@ -41,6 +41,10 @@ class UserController extends Controller
         return view('signin');
     }
 
+    public function register(Request $request)
+{
+    return $this->store($request);
+}
 
     public function store(Request $request)
     {
