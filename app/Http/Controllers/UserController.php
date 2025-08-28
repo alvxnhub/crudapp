@@ -31,7 +31,19 @@ class UserController extends Controller
     }
 
 
-    public function register(Request $request){
+    public function showSignupForm(Request $request)
+    {
+        return view('signup');
+    }
+
+    public function showSigninForm(Request $request)
+    {
+        return view('signin');
+    }
+
+
+    public function store(Request $request)
+    {
         // Validate and process the registration data
         $incomeFields = $request->validate([
             'name' => 'required|string|max:255|min:3', Rule::unique('users', 'name'),
